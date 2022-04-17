@@ -1,12 +1,14 @@
 // создание основных переменных
-const boomBox = document.querySelector('.boom'),
-      songName = document.querySelector('.song__JS'),
-      progressZone = document.querySelector('.progress__zone'),
-      progress = document.querySelector('.progress'),
-      back = document.querySelector('.back'),
-      play = document.querySelector('.play'),
-      next = document.querySelector('.next'),
+const boomBox = document.getElementsByName('boombox'),
+      songName = document.querySelector('.song_js'),
+      progressZone = document.querySelector('.progress_box_js'),
+      progress = document.querySelector('.progress_js'),
+      back = document.querySelector('.back_js'),
+      play = document.querySelector('.play_js'),
+      next = document.querySelector('.next_js'),
       audio = document.querySelector('.audio');
+
+
 
 // названия песен
 const playList = ['iPhone - rington',
@@ -37,12 +39,14 @@ function Play() {
    // запуск аудио файла
    audio.play();
    // добавление класса active
-   boomBox.classList.add('active');
+   boomBox[0].classList.add('active');
+   boomBox[1].classList.add('active');
    play.classList.add('active');
 }
 function Pause() {
    audio.pause();
-   boomBox.classList.remove('active');
+   boomBox[0].classList.remove('active');
+   boomBox[1].classList.remove('active');
    play.classList.remove('active');
 }
 
@@ -90,8 +94,8 @@ audio.addEventListener('ended', Next);
 
 // Анимация Progress Bar
 function updateProgress(b) {
-   const {duration, currentTime} = b.srcElement;
    // duration длительность трека, currentTime - текущее время
+   const {duration, currentTime} = b.srcElement;
    progress.style.width = currentTime / duration * 100 + '%';
 }
 // отображение прогресса трека
@@ -112,5 +116,4 @@ function setProgress(c) {
    // перемотка пропорционально месту клика от ширины
    audio.currentTime = clickX / widthProgressZone * duration;
 }
-// запуск функции setProgress при клике
 progressZone.addEventListener('click', setProgress);

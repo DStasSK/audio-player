@@ -5,29 +5,23 @@
 <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-   <section>
-      <div class="player">
-         <div class="brand"><a href="https://github.com/DStasSK" target="_blank">Brand playeR</a></div>
-         <div class="box">
-            <img class="boom" src="img/boom-box.jpg" alt="img">
+   <div class="player">
+      <a class="player__brand" href="https://github.com/DStasSK" target="_blank">Brand playeR</a>
+      <div class="player__boombox" name="boombox"></div>
+      <div class="player__boombox player__boombox_dabl" name="boombox"></div>
+      <div class="player__panel">
+         <div class="player__panel__song-name song_js">no sound data</div>
+         <div class="player__panel__progress-box progress_box_js">
+            <div class="player__panel__progress progress_js"></div>
          </div>
-         <div class="panel">
-            <div class="song__panel">
-               <div class="song__name song__JS">no sound data</div>
-               <!-- <marquee class="song__JS" behavior="scroll" direction="left">no sound data</marquee> -->
-            </div>
-            <div class="progress__zone">
-               <div class="progress"></div>
-            </div>
-         </div>
-         <div class="buttons">
-            <a class="back" title="back to song" href="#" onclick="return false;"></a>
-            <a class="play" title="play/pause" href="#" onclick="return false;"></a>
-            <a class="next" title="next song" href="#" onclick="return false;"></a>
-         </div>
-         <audio src="" class="audio"></audio>
       </div>
-   </section>
+      <div class="player__buttons">
+         <a class="player__buttons__item player__buttons__item_back back_js" title="back to song" href="#" onclick="return false;"></a>
+         <a class="player__buttons__item player__buttons__item_play play_js" title="play/pause" href="#" onclick="return false;"></a>
+         <a class="player__buttons__item player__buttons__item_next next_js" title="next song" href="#" onclick="return false;"></a>
+      </div>
+      <audio src="" class="audio"></audio>
+   </div>
 
    <script src="js/main.js"></script>
 </body>
